@@ -1,0 +1,10 @@
+const express=require("express")
+const app=express()
+const users=require("./routes/userRoutes")
+const logger=require("./middlewares/logger")
+app.use(express.json())
+app.use(logger)
+app.use("/users",users)
+app.listen(3000,()=>{
+    console.log("Server running in 300 port")
+})
